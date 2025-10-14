@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Saleh | Data Engineer</title>
+    <title>Mohamed Saleh | Data Engineer | Big Data | ETL Pipelines</title>
     <style>
         * {
             margin: 0;
@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -54,7 +53,6 @@
             50% { transform: translate(-30%, -30%) scale(1.2); opacity: 0.5; }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -108,7 +106,6 @@
             color: var(--primary);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -242,7 +239,6 @@
             to { opacity: 1; }
         }
 
-        /* Section Styles */
         section {
             padding: 6rem 5%;
             max-width: 1400px;
@@ -268,7 +264,119 @@
             border-radius: 2px;
         }
 
-        /* Skills Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: rgba(13, 17, 42, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .education-card h3 {
+            color: var(--light);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .institution {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .details {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .gpa-highlight {
+            display: inline-block;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .services-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            padding: 2rem;
+            background: rgba(13, 17, 42, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(13, 17, 42, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -310,7 +418,6 @@
             border: 1px solid rgba(100, 255, 218, 0.2);
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
             gap: 3rem;
@@ -331,10 +438,6 @@
         .project-card:hover {
             border-color: var(--primary);
             box-shadow: 0 10px 50px rgba(0, 212, 255, 0.2);
-        }
-
-        .project-card:nth-child(even) {
-            grid-template-columns: 1fr 1fr;
         }
 
         .project-card:nth-child(even) .project-info {
@@ -359,8 +462,19 @@
 
         .project-info p {
             color: var(--gray);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.8;
+        }
+
+        .project-info ul {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .project-info ul li {
+            margin-bottom: 0.5rem;
         }
 
         .tech-stack {
@@ -388,8 +502,6 @@
             align-items: center;
             justify-content: center;
             min-height: 250px;
-            position: relative;
-            overflow: hidden;
         }
 
         .project-icon {
@@ -397,7 +509,20 @@
             opacity: 0.3;
         }
 
-        /* Contact Section */
+        .impact-badge {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .use-case {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -438,6 +563,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
         .contact-details h3 {
@@ -448,9 +574,9 @@
         .contact-details p {
             color: var(--gray);
             font-size: 0.9rem;
+            word-break: break-all;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
@@ -459,7 +585,6 @@
             border-top: 1px solid rgba(0, 212, 255, 0.1);
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -482,11 +607,11 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 968px) {
             .hero-content,
             .project-card,
-            .contact-grid {
+            .contact-grid,
+            .education-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -506,6 +631,10 @@
             section {
                 padding: 4rem 5%;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 640px) {
@@ -520,6 +649,10 @@
             .nav-links {
                 display: none;
             }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -531,7 +664,9 @@
             <a href="#" class="logo">MS</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -542,8 +677,8 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Mohamed Saleh</h1>
-                <div class="subtitle">Data Engineer | Big Data Specialist</div>
-                <p>Building scalable data pipelines and automation solutions using Spark, Airflow, Hadoop, and Azure. I transform raw data into actionable insights that drive business decisions.</p>
+                <div class="subtitle">Data Engineer | Big Data | ETL Pipelines</div>
+                <p>I am a Computer Science student specializing in Big Data at Nile University. My focus is Data Engineering and building scalable systems using Spark, Airflow, Hadoop, and Azure. I enjoy turning raw data into pipelines, analytics, and automation solutions.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -571,14 +706,35 @@
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--gray); font-size: 1.1rem; line-height: 1.8;">
-            <p style="margin-bottom: 1.5rem;">I am a Computer Science student at Nile University specializing in Big Data with a stellar 3.98 GPA. My passion lies in building scalable data systems that transform complex data challenges into elegant, automated solutions.</p>
-            <p style="margin-bottom: 1.5rem;">As part of the Digital Egypt Pioneers Initiative (Data Engineering Track), I combine academic excellence with real-world experience as an active freelancer, helping businesses design and automate data pipelines that deliver actionable insights.</p>
-            <p>I thrive on turning raw data into value through innovative engineering and automation, working with cutting-edge technologies like Apache Spark, Azure, and modern orchestration tools.</p>
+            <p style="margin-bottom: 1.5rem;">I am a Computer Science student specializing in Big Data at Nile University. My focus is Data Engineering and building scalable systems using Spark, Airflow, Hadoop, and Azure. I enjoy turning raw data into pipelines, analytics, and automation solutions. I am also an active freelancer with experience in real-world automation projects.</p>
+            <p>I help businesses design and automate data pipelines that transform raw information into actionable insights using Big Data and Data Engineering.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>B.Sc. Computer Science (Big Data Track)</h3>
+                <div class="institution">Nile University, Giza, Egypt</div>
+                <div class="details">
+                    <p>Expected July 2026</p>
+                    <span class="gpa-highlight">GPA: 3.98</span>
+                </div>
+            </div>
+            <div class="education-card">
+                <h3>Digital Egypt Pioneers Initiative</h3>
+                <div class="institution">Data Engineering Track</div>
+                <div class="details">
+                    <p>MCIT, Egypt</p>
+                    <p>2025</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title">Skills Snapshot</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>Programming</h3>
@@ -591,20 +747,14 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Big Data Tools</h3>
+                <h3>Data Tools</h3>
                 <div class="skill-tags">
-                    <span class="tag">Apache Spark</span>
+                    <span class="tag">Spark</span>
                     <span class="tag">Hadoop</span>
                     <span class="tag">Pandas</span>
                     <span class="tag">NumPy</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Cloud & Platforms</h3>
-                <div class="skill-tags">
-                    <span class="tag">Azure Synapse</span>
-                    <span class="tag">Data Pipelines</span>
-                    <span class="tag">Stream Analytics</span>
+                    <span class="tag">Matplotlib</span>
+                    <span class="tag">Seaborn</span>
                 </div>
             </div>
             <div class="skill-card">
@@ -616,41 +766,90 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Data Visualization</h3>
+                <h3>Cloud</h3>
                 <div class="skill-tags">
-                    <span class="tag">Matplotlib</span>
-                    <span class="tag">Seaborn</span>
-                    <span class="tag">Dashboards</span>
+                    <span class="tag">Azure (Synapse)</span>
+                    <span class="tag">Data Pipelines</span>
+                    <span class="tag">Stream Analytics</span>
                 </div>
             </div>
             <div class="skill-card">
-                <h3>DevOps & Tools</h3>
+                <h3>Other</h3>
                 <div class="skill-tags">
-                    <span class="tag">Docker</span>
                     <span class="tag">GitHub</span>
+                    <span class="tag">Docker</span>
                     <span class="tag">APIs</span>
                     <span class="tag">n8n</span>
+                    <span class="tag">LLM integration</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="services">
+        <h2 class="section-title">Services</h2>
+        <div class="services-intro">
+            I help you move, clean, and organize data so it's ready for the business. I build cloud pipelines and big-data jobs, then automate and monitor them so they run safely and on time. You get dashboards or live streams you can use right away.
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🔄</span>
+                <h3>Data pipeline development (ETL/ELT)</h3>
+                <p>Building robust extraction, transformation, and loading pipelines for your data workflows</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🚀</span>
+                <h3>Big Data solutions with Spark & Hadoop</h3>
+                <p>Scalable big data processing and analytics using industry-leading frameworks</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">☁️</span>
+                <h3>Cloud-based data integration (Azure, APIs)</h3>
+                <p>Seamless integration of data sources in cloud environments</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">⚙️</span>
+                <h3>Automation workflows with n8n & AI models</h3>
+                <p>Intelligent automation powered by AI and modern workflow tools</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">📊</span>
+                <h3>Data visualization & dashboards</h3>
+                <p>Transform data into actionable insights with compelling visualizations</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">⚡</span>
+                <h3>Real-time data streaming</h3>
+                <p>Process and analyze data in real-time for immediate business insights</p>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Project</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-info">
                     <h3>AI-Powered Video Automation System</h3>
-                    <div class="project-role">Data Engineer | Automation Developer</div>
-                    <p>Developed a fully automated YouTube content pipeline that generates scripts using LLMs (Gemini/OpenAI), fetches stock videos from Pexels API, adds narration via TTS, auto-selects background music, and renders & uploads to YouTube automatically.</p>
+                    <div class="project-role">Role: Data Engineer | Automation Developer</div>
+                    <p><strong>Description:</strong></p>
+                    <p>Developed a fully automated YouTube content pipeline using n8n and AI.</p>
+                    <ul>
+                        <li>Generates scripts with LLMs (Gemini/OpenAI).</li>
+                        <li>Fetches stock videos from Pexels API.</li>
+                        <li>Adds narration via TTS.</li>
+                        <li>Auto-selects background music.</li>
+                        <li>Renders and uploads to YouTube automatically.</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong></p>
                     <div class="tech-stack">
                         <span class="tech-tag">n8n</span>
                         <span class="tech-tag">Gemini</span>
                         <span class="tech-tag">OpenAI</span>
                         <span class="tech-tag">APIs</span>
-                        <span class="tech-tag">Cloud</span>
+                        <span class="tech-tag">cloud integration</span>
                     </div>
-                    <p style="color: var(--accent); font-weight: 600;">YouTube automation, marketing, educational content</p>
+                    <p><strong>Use Case:</strong> <span class="use-case">YouTube automation, marketing, educational content.</span></p>
                 </div>
                 <div class="project-visual">
                     <div class="project-icon">🎬</div>
@@ -660,16 +859,24 @@
             <div class="project-card">
                 <div class="project-info">
                     <h3>Automated Cat Breed Classification</h3>
-                    <div class="project-role">Data Engineer | Distributed ML</div>
-                    <p>Built an end-to-end distributed ML system to classify 67k+ cat images into 67 breeds. Data stored in HDFS, processed with Spark for cleaning, resizing, and normalization. Improved rare breed detection using augmentation and weighted loss. Achieved 92% accuracy using fine-tuned ResNet50 with multi-GPU training orchestrated via Spark.</p>
+                    <div class="project-role">Role: Data Engineer (Distributed ML)</div>
+                    <p>Built HDFS ingestion and Spark preprocessing/augmentation, set up distributed PyTorch training with ResNet50, tuned hyperparameters, and evaluated accuracy/F1.</p>
+                    <p><strong>Description:</strong></p>
+                    <p>I built an end-to-end system to classify 67k+ cat images into 67 breeds.</p>
+                    <ul>
+                        <li>Data is stored in HDFS, then cleaned, resized, and normalized using Spark.</li>
+                        <li>I improved rare breeds using augmentation and weighted loss.</li>
+                        <li>Training fine-tunes ResNet50 in PyTorch with multi-GPU runs from Spark; I tuned the learning rate and batch size.</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong></p>
                     <div class="tech-stack">
                         <span class="tech-tag">Apache Spark</span>
                         <span class="tech-tag">PyTorch</span>
                         <span class="tech-tag">HDFS</span>
                         <span class="tech-tag">ResNet50</span>
-                        <span class="tech-tag">GPU Training</span>
+                        <span class="tech-tag">GPU training</span>
                     </div>
-                    <p style="color: var(--accent); font-weight: 600;">92% Accuracy • Scalable Computer Vision</p>
+                    <p><strong>Impact:</strong> <span class="impact-badge">Achieved 92% accuracy with distributed training. Demonstrated scalability for large-scale computer vision tasks.</span></p>
                 </div>
                 <div class="project-visual">
                     <div class="project-icon">🐱</div>
@@ -679,7 +886,7 @@
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Let's Connect</h2>
+        <h2 class="section-title">Let's connect</h2>
         <div class="contact-grid">
             <div class="contact-info">
                 <a href="mailto:mohamed139750@gmail.com" class="contact-item">
@@ -693,14 +900,14 @@
                     <div class="contact-icon">💼</div>
                     <div class="contact-details">
                         <h3>LinkedIn</h3>
-                        <p>Connect with me professionally</p>
+                        <p>linkedin.com/in/mohamed-saleh-22b296315</p>
                     </div>
                 </a>
-                <a href="https://www.upwork.com/freelancers/~01291173b59b40bf74" target="_blank" class="contact-item">
+                <a href="https://www.upwork.com/freelancers/~01291173b59b40bf74?mp_source=share" target="_blank" class="contact-item">
                     <div class="contact-icon">💻</div>
                     <div class="contact-details">
                         <h3>Upwork</h3>
-                        <p>View my freelance profile</p>
+                        <p>upwork.com/freelancers/~01291173b59b40bf74</p>
                     </div>
                 </a>
             </div>
@@ -713,12 +920,12 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Mohamed Saleh. Data Engineer | Big Data Specialist</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Building scalable data solutions, one pipeline at a time.</p>
+        <p style="font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>The End</strong></p>
+        <p>&copy; 2025 Mohamed Saleh</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Data Engineer | Big Data | ETL Pipelines</p>
     </footer>
 
     <script>
-        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -728,7 +935,6 @@
             }
         });
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -742,7 +948,6 @@
             });
         });
 
-        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -757,7 +962,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.skill-card, .project-card, .contact-item').forEach(el => {
+        document.querySelectorAll('.skill-card, .project-card, .contact-item, .education-card, .service-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
